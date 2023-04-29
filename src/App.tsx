@@ -56,12 +56,24 @@ export default function App() {
               <TableDemoData />
               {httpRequests.map((request, index) => (
                 <tr key={index} className="bg-white dark:bg-neutral-800">
+                  <td className="border border-neutral-500 text-center py-3 w-10">
+                    <div className="flex items-center justify-center">
+                      <input
+                        id="checkbox-all-search"
+                        type="checkbox"
+                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      ></input>
+                      <label htmlFor="checkbox-all-search" className="sr-only">
+                        checkbox
+                      </label>
+                    </div>
+                  </td>
                   <td className="border border-neutral-600 py-2 text-center">{request.method}</td>
                   <td className="border border-neutral-600 py-2 pl-2 truncate">{request.url}</td>
                   <td className="border border-neutral-600 py-2 text-center">
                     {request.statusCode}
                   </td>
-                  <td className="border border-neutral-600 py-2 text-center">
+                  <td className="border border-neutral-600 py-2 text-center truncate">
                     {request.timeStamp}
                   </td>
                   <td className="border border-neutral-600 py-2 text-center">
